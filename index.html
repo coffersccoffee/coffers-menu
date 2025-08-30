@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coffers Coffee | Menü • Menu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f0f10; --card:#171718; --text:#ededed; --muted:#a9a9a9; --accent:#B56A5F; --divider:#2a2b2d;
+    }
+    *{box-sizing:border-box;}
+    body{background:var(--bg); color:var(--text); font-family:'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0; line-height:1.55;}
+    .wrap{max-width:960px; margin:0 auto; padding:16px 12px 60px;}
+    .topbar{display:flex; align-items:center; justify-content:space-between; gap:10px; margin:6px 0 12px;}
+    .brand{font-weight:800; letter-spacing:.08em;}
+    .lang-switch{display:flex; gap:6px; background:var(--card); padding:6px; border-radius:999px; border:1px solid var(--divider);}
+    .lang-switch button{border:0; background:transparent; color:var(--muted); padding:6px 12px; border-radius:999px; font-weight:800;}
+    .lang-switch button.active{background:var(--accent); color:#111;}
+    .section{background:var(--card); border-radius:14px; padding:14px; margin:12px 0 16px; border:1px solid var(--divider);}
+    .section h2{font-size:18px; margin:0 0 10px; border-bottom:1px dashed var(--divider); padding-bottom:8px;}
+    .item{display:flex; align-items:flex-start; justify-content:space-between; gap:12px; padding:8px 0;}
+    .item + .item{border-top:1px dashed var(--divider);}
+    .name{font-weight:700;}
+    .desc{color:var(--muted); font-size:.92rem;}
+    .price, .sizes span{font-weight:700; color:var(--accent); white-space:nowrap;}
+    .sizes{display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; max-width:60%;}
+    .foot{color:var(--muted); font-size:.9rem; text-align:center; margin-top:10px;}
+    [data-lang]{display:none;}
+    [data-lang].show{display:block;}
+
+    /* Mobile fixes: stack name + prices and let prices wrap cleanly */
+    @media (max-width: 480px){
+      .item{flex-direction:column; align-items:flex-start;}
+      .sizes{justify-content:flex-start; max-width:100%;}
+      .price, .sizes span{font-size:1rem;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">COFFERS COFFEE</div>
+      <div class="lang-switch" role="tablist" aria-label="Language switch">
+        <button id="btn-tr" class="active" aria-selected="true">TR</button>
+        <button id="btn-en" aria-selected="false">EN</button>
+      </div>
+    </div>
+
+    <!-- Türkçe -->
+    <div id="lang-tr" data-lang="tr" class="show">
+
+      <div class="section">
+        <h2>☕ Espresso Bazlı İçecekler</h2>
+        <div class="item"><div class="name">Americano 14oz</div><div class="price">₺140.00</div></div>
+        <div class="item"><div class="name">Americano 8oz</div><div class="price">₺115.00</div></div>
+        <div class="item"><div class="name">Caffè Latte 14oz</div><div class="price">₺165.00</div></div>
+        <div class="item"><div class="name">Caffè Latte 8oz</div><div class="price">₺125.00</div></div>
+        <div class="item"><div class="name">Caffè Mocha 8oz</div><div class="price">₺170.00</div></div>
+        <div class="item"><div class="name">Cappuccino 14oz</div><div class="price">₺165.00</div></div>
+        <div class="item"><div class="name">Cappuccino 8oz</div><div class="price">₺125.00</div></div>
+        <div class="item"><div class="name">Karamel Latte 14oz</div><div class="price">₺175.00</div></div>
+        <div class="item"><div class="name">Karamel Latte 8oz</div><div class="price">₺155.00</div></div>
+        <div class="item"><div class="name">Cortado</div><div class="price">₺140.00</div></div>
+        <div class="item"><div class="name">Çift Espresso</div><div class="price">₺120.00</div></div>
+        <div class="item"><div class="name">Çift Espresso Macchiato</div><div class="price">₺135.00</div></div>
+        <div class="item"><div class="name">Tek Espresso</div><div class="price">₺85.00</div></div>
+        <div class="item"><div class="name">Flat White 8oz</div><div class="price">₺130.00</div></div>
+        <div class="item"><div class="name">Vanilya Latte 14oz</div><div class="price">₺185.00</div></div>
+        <div class="item"><div class="name">Vanilya Latte 8oz</div><div class="price">₺165.00</div></div>
+        <div class="item"><div class="name">Beyaz Mocha 14oz</div><div class="price">₺210.00</div></div>
+        <div class="item"><div class="name">Beyaz Mocha 8oz</div><div class="price">₺170.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>🫖 Demleme Yöntemleri</h2>
+        <div class="item"><div class="name">Chemex (2 kişilik)</div><div class="price">₺370.00</div></div>
+        <div class="item"><div class="name">Japanese Iced (1 kişilik)</div><div class="price">₺240.00</div></div>
+        <div class="item"><div class="name">Japanese Syphon (1 kişilik)</div><div class="price">₺240.00</div></div>
+        <div class="item"><div class="name">Japanese Syphon (2 kişilik)</div><div class="price">₺390.00</div></div>
+        <div class="item"><div class="name">V60 (1 kişilik)</div><div class="price">₺220.00</div></div>
+        <div class="item"><div class="name">V60 (2 kişilik)</div><div class="price">₺350.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>☕ Filtre Kahve</h2>
+        <div class="item"><div class="name">Filtre Kahve 14oz</div><div class="price">₺140.00</div></div>
+        <div class="item"><div class="name">Filtre Kahve 8oz</div><div class="price">₺115.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>🧊 Soğuk Kahveler</h2>
+        <div class="item"><div class="name">Ice Americano</div><div class="price">₺150.00</div></div>
+        <div class="item"><div class="name">Ice Caramel Latte</div><div class="price">₺180.00</div></div>
+        <div class="item"><div class="name">Ice Classic Frappe</div><div class="price">₺180.00</div></div>
+        <div class="item"><div class="name">Ice Filter</div><div class="price">₺150.00</div></div>
+        <div class="item"><div class="name">Ice Latte</div><div class="price">₺170.00</div></div>
+        <div class="item"><div class="name">Ice Mocha</div><div class="price">₺220.00</div></div>
+        <div class="item"><div class="name">Ice Nutella Frappe</div><div class="price">₺230.00</div></div>
+        <div class="item"><div class="name">Ice Vanilla Latte</div><div class="price">₺190.00</div></div>
+        <div class="item"><div class="name">Ice White Mocha</div><div class="price">₺220.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>🥤 Diğer Soğuk İçecekler</h2>
+        <div class="item"><div class="name">Hindistan Cevizli Matcha Latte</div><div class="price">₺230.00</div></div>
+        <div class="item"><div class="name">Cool Lime</div><div class="price">₺190.00</div></div>
+        <div class="item"><div class="name">Limonata</div><div class="price">₺140.00</div></div>
+        <div class="item"><div class="name">Matcha Latte</div><div class="price">₺210.00</div></div>
+        <div class="item"><div class="name">Rooibos Çayı</div><div class="price">₺200.00</div></div>
+        <div class="item"><div class="name">Rooibos Vanilya Çayı</div><div class="price">₺230.00</div></div>
+        <div class="item"><div class="name">Çilekli Matcha Latte</div><div class="price">₺240.00</div></div>
+        <div class="item"><div class="name">Vanilyalı Matcha Latte</div><div class="price">₺230.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>☕ Türk Kahvesi</h2>
+        <div class="item"><div class="name">Türk Kahvesi (Çift)</div><div class="price">₺160.00</div></div>
+        <div class="item"><div class="name">Türk Kahvesi (Solo)</div><div class="price">₺110.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>🥛 Bitki Bazlı Süt</h2>
+        <div class="item"><div class="name">Yulaf / Badem Sütü</div><div class="price">₺40.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>➕ Ekstra Şuruplar</h2>
+        <div class="item"><div class="name">Karamel Şurup</div><div class="price">₺35.00</div></div>
+        <div class="item"><div class="name">Vanilya Şurup</div><div class="price">₺55.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>🫘 Espresso Çekirdek & Filtre Kahve — Öğütülmüş / Paketler</h2>
+        <div class="item"><div><div class="name">Espresso Çekirdek & Filtre Kahve (öğütülmüş)</div><div class="desc">100 g / 200 g / 400 g / 500 g / 1000 g</div></div><div class="sizes"><span>₺195.00</span><span>₺370.00</span><span>₺690.00</span><span>₺840.00</span><span>₺1,550.00</span></div></div>
+        <div class="item"><div><div class="name">Türk Kahvesi</div><div class="desc">100 g / 200 g / 500 g</div></div><div class="sizes"><span>₺180.00</span><span>₺315.00</span><span>₺690.00</span></div></div>
+      </div>
+    </div>
+
+    <!-- English -->
+    <div id="lang-en" data-lang="en">
+
+      <div class="section">
+        <h2>☕ Espresso Beverages</h2>
+        <div class="item"><div class="name">Americano 14oz</div><div class="price">₺140.00</div></div>
+        <div class="item"><div class="name">Americano 8oz</div><div class="price">₺115.00</div></div>
+        <div class="item"><div class="name">Caffè Latte 14oz</div><div class="price">₺165.00</div></div>
+        <div class="item"><div class="name">Caffè Latte 8oz</div><div class="price">₺125.00</div></div>
+        <div class="item"><div class="name">Caffè Mocha 8oz</div><div class="price">₺170.00</div></div>
+        <div class="item"><div class="name">Cappuccino 14oz</div><div class="price">₺165.00</div></div>
+        <div class="item"><div class="name">Cappuccino 8oz</div><div class="price">₺125.00</div></div>
+        <div class="item"><div class="name">Caramel Latte 14oz</div><div class="price">₺175.00</div></div>
+        <div class="item"><div class="name">Caramel Latte 8oz</div><div class="price">₺155.00</div></div>
+        <div class="item"><div class="name">Cortado</div><div class="price">₺140.00</div></div>
+        <div class="item"><div class="name">Double Espresso</div><div class="price">₺120.00</div></div>
+        <div class="item"><div class="name">Double Espresso Macchiato</div><div class="price">₺135.00</div></div>
+        <div class="item"><div class="name">Single Espresso</div><div class="price">₺85.00</div></div>
+        <div class="item"><div class="name">Flat White 8oz</div><div class="price">₺130.00</div></div>
+        <div class="item"><div class="name">Vanilla Latte 14oz</div><div class="price">₺185.00</div></div>
+        <div class="item"><div class="name">Vanilla Latte 8oz</div><div class="price">₺165.00</div></div>
+        <div class="item"><div class="name">White Mocha 14oz</div><div class="price">₺210.00</div></div>
+        <div class="item"><div class="name">White Mocha 8oz</div><div class="price">₺170.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>🫖 Brewing Methods</h2>
+        <div class="item"><div class="name">Chemex (for 2)</div><div class="price">₺370.00</div></div>
+        <div class="item"><div class="name">Japanese Iced (for 1)</div><div class="price">₺240.00</div></div>
+        <div class="item"><div class="name">Japanese Syphon (for 1)</div><div class="price">₺240.00</div></div>
+        <div class="item"><div class="name">Japanese Syphon (for 2)</div><div class="price">₺390.00</div></div>
+        <div class="item"><div class="name">V60 (for 1)</div><div class="price">₺220.00</div></div>
+        <div class="item"><div class="name">V60 (for 2)</div><div class="price">₺350.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>☕ Filter Coffee</h2>
+        <div class="item"><div class="name">Filter Coffee 14oz</div><div class="price">₺140.00</div></div>
+        <div class="item"><div class="name">Filter Coffee 8oz</div><div class="price">₺115.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>🧊 Iced Coffee</h2>
+        <div class="item"><div class="name">Ice Americano</div><div class="price">₺150.00</div></div>
+        <div class="item"><div class="name">Ice Caramel Latte</div><div class="price">₺180.00</div></div>
+        <div class="item"><div class="name">Ice Classic Frappe</div><div class="price">₺180.00</div></div>
+        <div class="item"><div class="name">Ice Filter</div><div class="price">₺150.00</div></div>
+        <div class="item"><div class="name">Ice Latte</div><div class="price">₺170.00</div></div>
+        <div class="item"><div class="name">Ice Mocha</div><div class="price">₺220.00</div></div>
+        <div class="item"><div class="name">Ice Nutella Frappe</div><div class="price">₺230.00</div></div>
+        <div class="item"><div class="name">Ice Vanilla Latte</div><div class="price">₺190.00</div></div>
+        <div class="item"><div class="name">Ice White Mocha</div><div class="price">₺220.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>🥤 Other Cold Drinks</h2>
+        <div class="item"><div class="name">Coconut Matcha Latte</div><div class="price">₺230.00</div></div>
+        <div class="item"><div class="name">Cool Lime</div><div class="price">₺190.00</div></div>
+        <div class="item"><div class="name">Lemonade</div><div class="price">₺140.00</div></div>
+        <div class="item"><div class="name">Matcha Latte</div><div class="price">₺210.00</div></div>
+        <div class="item"><div class="name">Rooibos Tea</div><div class="price">₺200.00</div></div>
+        <div class="item"><div class="name">Rooibos Vanilla Tea</div><div class="price">₺230.00</div></div>
+        <div class="item"><div class="name">Strawberry Matcha Latte</div><div class="price">₺240.00</div></div>
+        <div class="item"><div class="name">Vanilla Matcha Latte</div><div class="price">₺230.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>☕ Turkish Coffee</h2>
+        <div class="item"><div class="name">Turkish Coffee (Double)</div><div class="price">₺160.00</div></div>
+        <div class="item"><div class="name">Turkish Coffee (Solo)</div><div class="price">₺110.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>🥛 Plant-Based Milk</h2>
+        <div class="item"><div class="name">Oat / Almond Milk</div><div class="price">₺40.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>➕ Extra Syrups</h2>
+        <div class="item"><div class="name">Caramel Syrup</div><div class="price">₺35.00</div></div>
+        <div class="item"><div class="name">Vanilla Syrup</div><div class="price">₺55.00</div></div>
+      </div>
+
+      <div class="section">
+        <h2>🫘 Espresso Beans & Filter Coffee — Ground / Packages</h2>
+        <div class="item"><div><div class="name">Espresso Beans & Filter Coffee (ground)</div><div class="desc">100 g / 200 g / 400 g / 500 g / 1000 g</div></div><div class="sizes"><span>₺195.00</span><span>₺370.00</span><span>₺690.00</span><span>₺840.00</span><span>₺1,550.00</span></div></div>
+        <div class="item"><div><div class="name">Turkish Coffee</div><div class="desc">100 g / 200 g / 500 g</div></div><div class="sizes"><span>₺180.00</span><span>₺315.00</span><span>₺690.00</span></div></div>
+      </div>
+    </div>
+
+    <div class="foot">Prices in TRY</div>
+  </div>
+
+  <script>
+    const trBtn = document.getElementById('btn-tr');
+    const enBtn = document.getElementById('btn-en');
+    const tr = document.getElementById('lang-tr');
+    const en = document.getElementById('lang-en');
+
+    function show(lang){
+      if(lang==='tr'){
+        tr.classList.add('show'); en.classList.remove('show');
+        trBtn.classList.add('active'); enBtn.classList.remove('active');
+        document.documentElement.setAttribute('lang','tr');
+      }else{
+        en.classList.add('show'); tr.classList.remove('show');
+        enBtn.classList.add('active'); trBtn.classList.remove('active');
+        document.documentElement.setAttribute('lang','en');
+      }
+      try{ localStorage.setItem('menuLang', lang); }catch(e){}
+    }
+
+    trBtn.addEventListener('click', ()=>show('tr'));
+    enBtn.addEventListener('click', ()=>show('en'));
+
+    try{
+      const saved = localStorage.getItem('menuLang');
+      if(saved==='en') show('en');
+      else show('tr');
+    }catch(e){}
+  </script>
+</body>
+</html>
